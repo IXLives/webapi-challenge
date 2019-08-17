@@ -2,6 +2,7 @@ const express = require("express")
 const cors = require("cors")
 
 const ProjectRouter = require("./projects/project-router")
+const ActionRouter = require("./actions/action-router")
 
 const server = express()
 
@@ -13,5 +14,6 @@ server.get("/", (req, res) => {
 })
 
 server.use("/api/projects", ProjectRouter)
+server.use("/api/actions", ActionRouter)
 
 module.exports = server
